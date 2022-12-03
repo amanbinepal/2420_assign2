@@ -124,9 +124,9 @@ Type the following in the caddy.service
 
 ### Step 6
 Type the following commands
-```systemctl daemon-reload```
-```systemctl enable caddy.service```
-```systemctl start caddy.service```
+#### 1.```systemctl daemon-reload```
+#### 2.```systemctl enable caddy.service```
+#### 3.```systemctl start caddy.service```
 To check status of caddy.service
 ```systemctl status caddy.service```
 
@@ -144,9 +144,9 @@ Type the following in the hello_web.service
 ![image](https://user-images.githubusercontent.com/97579029/205426589-5950d452-551c-4dab-b95a-eed911a61a32.png)
 ### Step 3
 Type the following commands
-```systemctl daemon-reload```
-```systemctl enable hello_web.server```
-```systemctl start caddy.service```
+#### 1.```systemctl daemon-reload```
+#### 2.```systemctl enable hello_web.server```
+#### 3.```systemctl start caddy.service```
 To check status of hello_web.service
 ```systemctl status hello_web.service```
 # Step 8
