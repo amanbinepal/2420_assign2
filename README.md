@@ -84,6 +84,63 @@ Type command ```sudo chown root: caddy``` to change owner and group to root
 ### Step 4
 Type command ```sudo cp caddy /usr/bin/``` to copy to bin directory
 
+# Step 4 - Write Web App
+### Step 1
+In wsl, create new directory called ```2420-assign-two```
+### Step 2
+Inside of ```2420-assign-two``` create 2 directories called ```html``` and ```src```
+### Step 3
+Inside of the ```html``` directory, create a file called ```index.html``` and create a simple html page like hello world in it.
+![image](https://user-images.githubusercontent.com/97579029/205425448-e389c848-539e-4eda-9e3d-c4bbd7b016e8.png)
+
+### Step 4
+Inside of the ```src``` directory, type command ```npm init``` then ```npm i fastify to create new node project
+### Step 5
+Create an ```index.js``` in the ```src``` directory and type the following
+![image](https://user-images.githubusercontent.com/97579029/205425206-b61ee630-1c34-4f3b-9595-3cd5a4849667.png)
+### Step 6
+Test server and move 2420-assign-two which contains the html and src directory to servers using sftp
+In WSL:
+1. ```sftp -i ~/.ssh/(key_name) (name)@(serverip)```
+2. ```put -r 2420-assign-two```
+
+# Step 5 - Write Caddyfile
+### Step 1
+Create Caddyfile in ```/etc/caddy``` directory
+### Step 2
+Edit Caddyfile with command ```sudo vim /etc/caddy/Caddyfile```
+### Step 3
+Type the following in the Caddyfile
+### Note: Ensure that you use your load balancer's ip
+![image](https://user-images.githubusercontent.com/97579029/205425681-fcc943eb-6253-4af3-9047-7a8eb60d6e93.png)
+
+## caddy.service
+
+### Step 4
+Type command ```sudo vim /etc/systemd/system/caddy.service``` to edit caddy.service file
+### Step 5
+Type the following in the caddy.service
+![image](https://user-images.githubusercontent.com/97579029/205425918-134a609b-d670-4b85-9467-14e2ce26e313.png)
+
+### Step 6
+Type the following commands
+```systemctl daemon-reload```
+```systemctl enable caddy.service```
+```systemctl start caddy.service```
+To check status of caddy.service
+```systemctl status caddy.service```
+
+# Step 6
+
+
+
+
+
+
+
+
+
+
 
 
 
