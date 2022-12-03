@@ -1,0 +1,13 @@
+[Unit]
+Description=starts node application and restarts on failure
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/ab/.volta/bin/node /home/ab/2420-assign-two/src/index.js
+User=ab
+Group=ab
+Restart=on-failure
+
+[Install]
+WantedBy=multi.user.target
