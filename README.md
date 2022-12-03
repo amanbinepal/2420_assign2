@@ -130,7 +130,43 @@ Type the following commands
 To check status of caddy.service
 ```systemctl status caddy.service```
 
-# Step 6
+# Step 6 - Install node and npm with Volta
+Firstly type the command ```curl https://get.volta.sh | bash```
+Secondly type ```source ~/.bashrc```
+Thirdly type ```volta install node```
+Once completed, restart the servers to ensure changes are made
+
+# Step 7 - Write Service File to start node application
+### Step 1
+Type command ```sudo vim /etc/systemd/system/hello_web.service``` to edit hello_web.service file
+### Step 2
+Type the following in the hello_web.service
+![image](https://user-images.githubusercontent.com/97579029/205426589-5950d452-551c-4dab-b95a-eed911a61a32.png)
+### Step 3
+Type the following commands
+```systemctl daemon-reload```
+```systemctl enable hello_web.server```
+```systemctl start caddy.service```
+To check status of hello_web.service
+```systemctl status hello_web.service```
+# Step 8
+
+### Step 1
+Use sftp to move files to the servers; use the process in the last part of step 4
+### Step 3
+Move the files to apprpriate locations
+1. Service files to ```/etc/systemd/system/```
+2. Caddyfiles to ```/etc/caddy/```
+
+# Step 9
+
+Test the load balancer by visiting the following:
+
+http://24.199.71.14/api
+
+
+
+
 
 
 
